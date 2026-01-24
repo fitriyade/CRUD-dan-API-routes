@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+model Food {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  imageUrl    String?
+  type        String?
+  ingredients String
+  deletedAt   DateTime?   
+  createdAt   DateTime @default(now())
+}
